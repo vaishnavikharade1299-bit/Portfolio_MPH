@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Vaishnavi Kharade, BDS, MPH, CPH: clinical research coordinator and health data analyst portfolio.">
+<style>body{margin:0}*{box-sizing:border-box}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Vaishnavi Kharade, MPH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column styled like a surveillance data brief — header, toolkit strip, then project "reports" each with a methods table and one chart. */
+:root{
+  --paper:#f6f8f7; --sheet:#ffffff; --ink:#18232d; --muted:#556370; --rule:#d8dfe0;
+  --accent:#0d6b6b; --accent-soft:#e1efee; --warm:#a8661a; --warm-soft:#f5ead9;
+  --display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#11181d; --sheet:#172127; --ink:#e4ebec; --muted:#9aabb3; --rule:#2b3a42;
+  --accent:#5cc2bd; --accent-soft:#16353a; --warm:#e0a352; --warm-soft:#3a2c17; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11181d; --sheet:#172127; --ink:#e4ebec; --muted:#9aabb3; --rule:#2b3a42;
+  --accent:#5cc2bd; --accent-soft:#16353a; --warm:#e0a352; --warm-soft:#3a2c17; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:16px/1.6 var(--body);padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:880px;margin:0 auto}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.2}
+.label{font:500 11.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+.wrap>header{padding-block:56px 36px;border-bottom:1px solid var(--rule);display:grid;gap:18px}
+.wrap>header h1{font-size:clamp(2.1rem,5vw,3.1rem);font-weight:650;letter-spacing:-.01em}
+.wrap>header h1 span{color:var(--accent)}
+.lede{font-size:1.1rem;max-width:62ch;color:var(--ink);margin:0}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.creds li{font:500 12.5px/1 var(--mono);padding:7px 10px;border:1px solid var(--rule);border-radius:3px;background:var(--sheet)}
+.contact{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;font-size:14px;color:var(--muted)}
+.contact code{font:14px var(--mono);color:var(--ink);user-select:all}
+.copy{font:500 12px var(--mono);border:1px solid var(--rule);background:var(--sheet);color:var(--ink);padding:5px 9px;border-radius:3px;cursor:pointer}
+
+/* toolkit */
+.toolkit{padding-block:32px;border-bottom:1px solid var(--rule);display:grid;gap:16px}
+.tk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px 28px}
+.tk-grid h3{font:600 14px/1.3 var(--body);margin-bottom:4px}
+.tk-grid p{margin:0;font-size:14px;color:var(--muted)}
+
+/* index */
+.index{padding-block:28px 8px;display:grid;gap:10px}
+.index ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 28px}
+.index a{display:flex;gap:10px;text-decoration:none;color:var(--ink);font-size:14.5px;padding:4px 0;border-bottom:1px dotted var(--rule)}
+.index a:hover{color:var(--accent)}
+.index .n{font:500 12px/1.9 var(--mono);color:var(--muted);min-width:2.2em}
+
+/* project reports */
+.report{margin-top:40px;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:28px clamp(18px,4vw,36px);display:grid;gap:18px}
+.report .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.report h2{font-size:clamp(1.35rem,3vw,1.7rem);font-weight:650}
+.tag{font:500 11.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:6px 8px;border-radius:3px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.tag.warm{background:var(--warm-soft);color:var(--warm)}
+.report p{margin:0;max-width:68ch}
+.meta{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0;font-size:14.5px;border-block:1px solid var(--rule);padding-block:14px}
+.meta dt{font:500 11.5px/1.9 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.meta dd{margin:0;min-width:0}
+.steps{margin:0;padding-left:1.2em;display:grid;gap:4px;max-width:68ch}
+.finding{border-left:3px solid var(--warm);padding:4px 0 4px 14px;font-size:15.5px;max-width:66ch}
+.finding strong{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}
+figure{margin:0;display:grid;gap:8px;min-width:0}
+figcaption{font-size:13px;color:var(--muted);max-width:68ch}
+.chart{overflow-x:auto}
+.chart svg{display:block;width:100%;max-width:640px;height:auto;font-family:var(--mono)}
+.chart text{fill:var(--muted);font-size:11px}
+.chart .val{fill:var(--ink);font-size:11.5px;font-weight:500}
+.chart .grid{stroke:var(--rule);stroke-width:1}
+.chart .axis{stroke:var(--muted);stroke-width:1}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.stat{display:grid;gap:2px}
+.stat b{font:500 1.5rem/1.1 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+.stat span{font-size:13px;color:var(--muted)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.two>*{min-width:0}
+table.mini{border-collapse:collapse;font-size:14px;width:100%}
+table.mini th,table.mini td{text-align:left;padding:6px 10px 6px 0;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums}
+table.mini th{font:500 11.5px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+table.mini td.num{font-family:var(--mono)}
+.tblwrap{overflow-x:auto}
+
+.sub{font:600 1.05rem/1.3 var(--body);margin:6px 0 -6px}
+.coursework{margin-top:64px;display:grid;gap:22px}
+.cw-head{display:grid;gap:8px;padding-top:28px;border-top:2px solid var(--ink)}
+.cw-head h2{font-size:clamp(1.5rem,3.5vw,2rem)}
+.cw-head p{margin:0;max-width:66ch;color:var(--muted)}
+.course{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:24px clamp(16px,4vw,32px);display:grid;gap:14px;scroll-margin-top:16px}
+.course p{margin:0;max-width:68ch}
+.c-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.c-top h3{font-size:1.3rem;font-weight:650;margin-top:4px}
+.course table.mini td:first-child{white-space:nowrap;font-weight:600;padding-right:14px}
+.course table.mini td:nth-child(2){color:var(--muted);min-width:9em}
+table.mini td{vertical-align:top}
+.report{scroll-margin-top:16px}
+.role{margin:-6px 0 0;font:600 clamp(1.05rem,2.4vw,1.3rem)/1.3 var(--body);color:var(--accent)}
+.targets{margin:0;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;font-size:14.5px}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font:600 14px/1 var(--body);padding:11px 16px;border-radius:4px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--sheet)}
+.btn.primary:hover{color:var(--sheet);filter:brightness(1.08)}
+.cv-note{margin:0;font-size:13px;color:var(--muted)}
+.sec{font-size:clamp(1.35rem,3vw,1.7rem);font-weight:650}
+.xp{padding-block:36px;border-bottom:1px solid var(--rule);display:grid;gap:18px}
+.bridge{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px 26px}
+.bridge h3{font:600 14.5px/1.3 var(--body);margin-bottom:4px}
+.bridge p{margin:0;font-size:14px;color:var(--muted)}
+.timeline{list-style:none;margin:0;padding:0;display:grid}
+.timeline li{display:grid;grid-template-columns:9.5em 1fr;gap:14px;padding-block:11px;border-top:1px solid var(--rule)}
+.timeline li>div{min-width:0}
+.timeline .when{font:500 12.5px/1.7 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.timeline b{font-weight:600}
+.timeline p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+@media (max-width:520px){.timeline li{grid-template-columns:1fr;gap:2px}}
+.glance{padding-block:32px;border-bottom:1px solid var(--rule);display:grid;gap:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{display:grid;align-content:start;gap:10px;padding:18px;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;color:var(--ink);text-decoration:none}
+.card:hover{border-color:var(--accent)}
+.card .tag{justify-self:start}
+.card h3{font-size:1.12rem;font-weight:650}
+.card dl{margin:0;display:grid;gap:4px;font-size:13.5px}
+.card dt{font:500 10.5px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.card dd{margin:0}
+.contrib{font-size:14.5px;background:var(--accent-soft);padding:10px 14px;border-radius:3px;max-width:none!important}
+.contrib b{color:var(--accent)}
+.code{margin-top:64px;display:grid;gap:18px}
+.snip{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:16px 18px;gap:10px}
+.snip figcaption{font-size:14px;color:var(--muted)}
+.snip figcaption b{color:var(--ink);font-weight:600}
+.snip pre{margin:0;overflow-x:auto;font:13px/1.55 var(--mono);color:var(--ink);background:var(--paper);padding:14px;border-radius:3px}
+.more{margin-top:40px;display:grid;gap:14px}
+.more h2{font-size:1.4rem}
+.more ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.more li{display:grid;gap:2px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.more li b{font-weight:600}
+.more li span{color:var(--muted);font-size:14.5px}
+footer{margin-top:48px;font-size:13px;color:var(--muted)}
+@media (max-width:520px){.meta{grid-template-columns:1fr}.meta dt{line-height:1.2;margin-top:6px}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="label">Clinical research · Health data</div>
+  <h1>Vaishnavi Kharade, <span>BDS, MPH, CPH</span></h1>
+  <p class="role">Clinical Research Coordinator and Health Data Analyst</p>
+  <p class="lede">Over four years coordinating Phase II–IV industry-sponsored trials, plus an MPH in Epidemiology and Biostatistics. I keep study data clean at the site and analyze it afterwards in SAS, R, Excel and Tableau.</p>
+  <p class="targets"><span class="label">Target roles</span> Clinical data analyst · Research or epidemiology analyst · Clinical research coordinator</p>
+  <div class="actions">
+    <a class="btn primary" href="resume.pdf" download="Vaishnavi_Kharade_Resume.pdf">Download résumé (PDF)</a>
+    <a class="btn" href="resume.pdf" target="_blank" rel="noopener">View résumé</a>
+    <a class="btn" href="https://www.linkedin.com/in/dr-vaishnavi-kharade-8508171b8/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+    <div class="contact">
+    <span>Email</span><code id="email">vaishnavikharade1299@gmail.com</code>
+    <button class="copy" id="copyBtn" type="button">Copy</button>
+    <span>Dallas, Texas</span>
+  </div>
+</header>
+
+<section class="glance" aria-labelledby="gl">
+  <div class="label" id="gl">Start here</div>
+  <div class="cards">
+    <a class="card" href="#sti">
+      <span class="tag">Excel · Tableau</span>
+      <h3>STI surveillance pipeline and dashboard</h3>
+      <dl><dt>Method</dt><dd>Merge, clean and document 38,434 line-list records; incidence rates by person, place and time</dd>
+      <dt>Result</dt><dd>Analysis-ready dataset plus Tableau dashboards for health department decision-makers</dd></dl>
+    </a>
+    <a class="card" href="#chol">
+      <span class="tag">SAS</span>
+      <h3>Diet and cholesterol in NHANES</h3>
+      <dl><dt>Method</dt><dd>t-tests, ANOVA with Tukey HSD, linear regression with diagnostics; N = 4,203</dd>
+      <dt>Result</dt><dd>Carbohydrate intake differed by cholesterol group (p = 0.0072), but diet explained under 1.3% of variance</dd></dl>
+    </a>
+    <a class="card" href="#covid">
+      <span class="tag warm">Communication</span>
+      <h3>Long COVID data brief</h3>
+      <dl><dt>Method</dt><dd>CDC Household Pulse estimates with 95% CIs, written for a general audience</dd>
+      <dt>Result</dt><dd>Adults 18–29 had the highest share who ever had long COVID: 17.8%</dd></dl>
+    </a>
+  </div>
+</section>
+
+<section class="xp" aria-labelledby="xp">
+  <div class="label" id="xp">Experience</div>
+  <h2 class="sec">Where trial operations meet data work</h2>
+  <div class="bridge">
+    <div><h3>Data quality at the source</h3><p>Resolved 400+ EDC queries and prepared for 35+ sponsor monitoring visits. The same habits drive my cleaning logs and data dictionaries.</p></div>
+    <div><h3>Documented, reproducible work</h3><p>Inspection-ready site files at work; code, logs and output for every analysis in school.</p></div>
+    <div><h3>Clinical judgment in the variables</h3><p>A dental surgeon's training helps me define outcomes, spot implausible values and read clinical measures correctly.</p></div>
+  </div>
+  <ol class="timeline">
+    <li><span class="when">Jul 2026 – now</span><div><b>Data Analyst, Research &amp; Healthcare</b> · Community Dreams Foundation<p>Cleaning and analyzing community health program data and building program dashboards.</p></div></li>
+    <li><span class="when">Feb – Jul 2026</span><div><b>Clinical Research Coordinator</b> · Southern Endocrinology Associates<p>9+ Phase II–IV trials and 50+ participants; 400+ EDC queries resolved; 35+ monitoring visits; investigational product accountability.</p></div></li>
+    <li><span class="when">2025</span><div><b>Research Coordinator</b> · South-central Partnership for Energy Efficiency as a Resource (SPEER)<p>Data abstraction, evidence synthesis and three published briefs on extreme heat, air quality and health.</p></div></li>
+    <li><span class="when">2024 – 2025</span><div><b>Graduate Research Assistant, Maternal &amp; Child Health</b> · UNT Health Science Center<p>Data abstraction and validation for maternal mortality and morbidity research using MMRIA, CDC and Texas DSHS data, in SAS, R, REDCap and Excel.</p></div></li>
+    <li><span class="when">Jun – Nov 2024</span><div><b>Public Health Intern, Internal Medicine &amp; Geriatrics</b> · UNT Health Science Center<p>Participant tracking, data collection instruments and quality checks.</p></div></li>
+    <li><span class="when">Nov 2023 – Jan 2024</span><div><b>Graduate Research Assistant, Infectious Diseases</b> · Tarrant County Public Health<p>Validated surveillance datasets for trend monitoring and reporting.</p></div></li>
+    <li><span class="when">2019 – 2022</span><div><b>Clinical Research Coordinator</b> · Datta Meghe Medical Hospital, India<p>15+ Phase II–IV trials in endocrinology, ophthalmology and sleep medicine; 200+ participants.</p></div></li>
+  </ol>
+</section>
+
+<section class="toolkit" aria-labelledby="tk">
+  <div class="label" id="tk">Toolkit</div>
+  <div class="tk-grid">
+    <div><h3>Data management</h3><p>Importing raw text and SAS transport (XPT) files, merges on IDs, recodes, arrays, date math, permanent format libraries, wide-to-long reshaping, data dictionaries.</p></div>
+    <div><h3>Statistics</h3><p>t-tests, Wilcoxon, chi-square, ANOVA with Tukey HSD, linear and logistic regression with variable selection, stratified analysis, interaction, relative risk and odds ratios.</p></div>
+    <div><h3>Software</h3><p>SAS, R, Excel (pivot tables, formulas, dashboards), Tableau, REDCap, Medidata Rave, Epic.</p></div>
+    <div><h3>Data sources</h3><p>NHANES, BRFSS, YRBS, NSCH, Household Pulse Survey, notifiable disease line lists.</p></div>
+  </div>
+</section>
+
+<nav class="index" aria-labelledby="idx">
+  <div class="label" id="idx">Projects</div>
+  <ol>
+    <li><a href="#sti"><span class="n">01</span>STI surveillance data pipeline and dashboard</a></li>
+    <li><a href="#chol"><span class="n">02</span>Diet and serum cholesterol in NHANES</a></li>
+    <li><a href="#sas"><span class="n">03</span>SAS data management casebook</a></li>
+    <li><a href="#covid"><span class="n">04</span>Long COVID by age group</a></li>
+    <li><a href="#dental"><span class="n">05</span>Preventive dental visits in Texas children</a></li>
+    <li><a href="#yrbs"><span class="n">06</span>Teen vaping and persistent sadness</a></li>
+  </ol>
+  <div class="label" style="margin-top:14px">Coursework, course by course</div>
+  <ol>
+    <li><a href="#bios1"><span class="n">B1</span>Biostatistics I and SAS programming</a></li>
+    <li><a href="#bios2"><span class="n">B2</span>Intermediate Biostatistics</a></li>
+    <li><a href="#ada"><span class="n">B3</span>Applied Data Analysis in Epidemiology</a></li>
+    <li><a href="#epi1"><span class="n">E1</span>Principles of Epidemiology</a></li>
+    <li><a href="#epi2"><span class="n">E2</span>Intermediate Epidemiologic Methods</a></li>
+    <li><a href="#epi3"><span class="n">E3</span>Infectious, chronic and surveillance epidemiology</a></li>
+    <li><a href="#code"><span class="n">C</span>SAS code samples</a></li>
+  </ol>
+</nav>
+
+<!-- 01 STI -->
+<article class="report" id="sti">
+  <div class="top"><h2>STI surveillance data pipeline and Tableau dashboard</h2><span class="tag">Excel · Tableau</span></div>
+  <p>A county health department's line lists for syphilis, gonorrhea, chlamydia and HIV/AIDS came in as separate files per disease and year. I combined them into one analysis-ready dataset, documented every change, and built a descriptive-epidemiology dashboard on chlamydia.</p>
+  <dl class="meta">
+    <dt>Data</dt><dd>Training line-list data for fictional Springville County, TX, 2012–2015, plus county population denominators</dd>
+    <dt>Tools</dt><dd>Excel (merging, formulas, pivot tables, filterable dashboard), Tableau</dd>
+    <dt>Role</dt><dd>Sole analyst</dd>
+  </dl>
+  <p class="contrib"><b>My contribution:</b> all of it. The course supplied the raw files and prompts; I wrote the cleaning rules, data dictionary and rate calculations and designed every dashboard.</p>
+  <ol class="steps">
+    <li>Merged the disease files into one table with Dx code, sex, race, city, ZIP, age and diagnosis date, keeping the source file name for traceability.</li>
+    <li>Derived age groups by formula, flagging ages above 120 or missing as invalid, and mapped Dx and race codes to labels with lookup tables.</li>
+    <li>Removed 310 records: 7 with Dx codes outside the STI codebook and 303 diagnosed outside 2012–2015.</li>
+    <li>Calculated incidence per 100,000 by year, sex, age group, race/ethnicity and city, then built Tableau dashboards covering person, place and time.</li>
+  </ol>
+  <div class="stats">
+    <div class="stat"><b>38,434</b><span>records merged</span></div>
+    <div class="stat"><b>38,124</b><span>records after cleaning</span></div>
+    <div class="stat"><b>72%</b><span>of cases were chlamydia</span></div>
+    <div class="stat"><b>71%</b><span>of chlamydia cases in ages 15–24</span></div>
+  </div>
+  <figure>
+    <div class="chart" id="c-sti"></div>
+    <figcaption>Chlamydia incidence per 100,000 residents, Springville County, 2012–2015. Female patients made up 77% of chlamydia cases.</figcaption>
+  </figure>
+  <p class="finding">Rates dipped to <strong>463.8</strong> per 100,000 in 2014, then rose to <strong>500.2</strong> in 2015. I also wrote data-entry recommendations for the collection team, including validation rules, dropdowns for coded fields, and consistent patient IDs.</p>
+  <div class="two">
+    <figure>
+      <div class="chart" id="c-race"></div>
+      <figcaption>Chlamydia incidence per 100,000 by race/ethnicity. Rates for Black residents were more than 6 times the rates for White residents in every year.</figcaption>
+    </figure>
+    <figure>
+      <div class="chart" id="c-city"></div>
+      <figcaption>Chlamydia incidence per 100,000 in the five cities with the highest rates, 2015.</figcaption>
+    </figure>
+  </div>
+  <h3 class="sub">Four workbooks, built up in stages</h3>
+  <div class="tblwrap">
+    <table class="mini">
+      <thead><tr><th>Stage</th><th>What it contains</th></tr></thead>
+      <tbody>
+        <tr><td>Excel I</td><td>Merged and cleaned line list, data dictionary, cleaning log and a written summary of every deletion</td></tr>
+        <tr><td>Excel II</td><td>Lookup tables for Dx, sex and race codes; pivot tables by race, age group, sex and city; an Excel dashboard filterable by diagnosis, year, race, age, sex and city; a chlamydia rate sheet using county population denominators</td></tr>
+        <tr><td>Tableau I</td><td>First views: STI counts by sex and year, STI by age and year, chlamydia counts with a rate overlay</td></tr>
+        <tr><td>Tableau II</td><td>Three dashboards: a chlamydia person-place-time story (race, year and city views, including a city bubble chart), an STI data brief titled "STI Trends Analysis (2012–2015): Guiding Public Health Resource Allocation", and an eight-step communication framework covering audience, message, channel, evaluation and avoiding stigma</td></tr>
+        <tr><td>Final dashboard</td><td>"Analyzing Chlamydia Incidence Trends: A Descriptive Epidemiology Report for Targeted Public Health Action", with 14 worksheets including ZIP-level and age-group views and written interpretation of high-, moderate- and low-incidence cities</td></tr>
+      </tbody>
+    </table>
+  </div>
+</article>
+
+<!-- 02 Cholesterol -->
+<article class="report" id="chol">
+  <div class="top"><h2>Dietary intake and serum cholesterol in U.S. adults</h2><span class="tag">SAS</span></div>
+  <p>Do adults with high cholesterol eat differently? We tested whether carbohydrate, protein and fat intake from a 24-hour dietary recall differ by cholesterol level and whether they predict total cholesterol.</p>
+  <dl class="meta">
+    <dt>Data</dt><dd>NHANES 2011–2012, adults 18+, N = 4,203</dd>
+    <dt>Methods</dt><dd>Wilcoxon rank-sum, chi-square, t-tests, one-way ANOVA with Bartlett and Tukey HSD, simple and multiple linear regression with residual and Q-Q diagnostics</dd>
+    <dt>Tools</dt><dd>SAS</dd>
+    <dt>Role</dt><dd>Team of three</dd>
+  </dl>
+  <p class="contrib"><b>My contribution:</b> co-wrote the analytic plan, ran the SAS cleaning and analysis, and wrote the final report. Public NHANES data.</p>
+  <div class="two">
+    <figure>
+      <div class="chart" id="c-chol"></div>
+      <figcaption>Mean carbohydrate intake (g/day) by total-cholesterol category. ANOVA p = 0.0072.</figcaption>
+    </figure>
+    <div class="tblwrap">
+      <table class="mini">
+        <thead><tr><th>Model</th><th>Predictor</th><th>β</th><th>p</th></tr></thead>
+        <tbody>
+          <tr><td>I</td><td>Carbohydrate</td><td class="num">−0.0175</td><td class="num">0.0007</td></tr>
+          <tr><td>II</td><td>Fat</td><td class="num">−0.0266</td><td class="num">0.052</td></tr>
+          <tr><td rowspan="3">III</td><td>Age</td><td class="num">0.215</td><td class="num">&lt;0.0001</td></tr>
+          <tr><td>Carbohydrate</td><td class="num">−0.0127</td><td class="num">0.056</td></tr>
+          <tr><td>Fat</td><td class="num">0.0096</td><td class="num">0.58</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="finding">40.8% of adults had total cholesterol of 200 mg/dL or more. The high group ate less carbohydrate than the normal and borderline groups (Tukey), but diet explained under 1.3% of the variance (R² = 0.0121 for Model III). Age was the strongest predictor.</p>
+</article>
+
+<!-- 03 SAS -->
+<article class="report" id="sas">
+  <div class="top"><h2>SAS data management casebook</h2><span class="tag">SAS</span></div>
+  <p>A set of data management labs and a final exam, each working a real public health dataset from raw file to documented, analysis-ready output with code, log and results.</p>
+  <p class="contrib"><b>My contribution:</b> individual work. The course set the questions and datasets; I wrote every program and answer.</p>
+  <div class="tblwrap">
+    <table class="mini">
+      <thead><tr><th>Dataset</th><th>What I did</th></tr></thead>
+      <tbody>
+        <tr><td>Worcester Heart Attack Study (WHAS500)</td><td>Read raw text into a permanent library; labels and a permanent format catalog; array recode of 9 to missing; BMI flags; length-of-stay and follow-up in days and months; comorbidity scores; relative risk of CVD by sex with 95% CI; wide-to-long reshaping with arrays</td></tr>
+        <tr><td>BRFSS 2012</td><td>Imported the national XPT file, subset to Texas, profiled myocardial infarction by sex, compared PROC MEANS with PROC SURVEYMEANS</td></tr>
+        <tr><td>Hospital survey</td><td>Applied a codebook with labels and formats, descriptive statistics and graphical summaries</td></tr>
+        <tr><td>City SES and class survey</td><td>Merged datasets on ID, handled numeric vs. character keys, conditional recodes, box plots by city</td></tr>
+        <tr><td>NHANES oral health, 2009–2018</td><td>Imported and merged dental exam and demographic XPT files across three survey cycles by SEQN for a dental caries trends proposal</td></tr>
+      </tbody>
+    </table>
+  </div>
+</article>
+
+<!-- 04 COVID -->
+<article class="report" id="covid">
+  <div class="top"><h2>Long COVID by age group</h2><span class="tag warm">Infographic · Press release</span></div>
+  <p>I analyzed CDC's post-COVID conditions estimates and wrote a plain-language press release and infographic on which age groups report long COVID most often.</p>
+  <dl class="meta">
+    <dt>Data</dt><dd>U.S. Census Bureau Household Pulse Survey via CDC/NCHS, June 1–13, 2022</dd>
+    <dt>Tools</dt><dd>Excel, infographic design</dd>
+    <dt>Role</dt><dd>Sole author</dd>
+  </dl>
+  <p class="contrib"><b>My contribution:</b> chose the indicators, extracted the estimates from CDC's public file, and wrote the brief and infographic.</p>
+  <figure>
+    <div class="chart" id="c-covid"></div>
+    <figcaption>Adults who ever experienced long COVID, % of all adults, with 95% confidence intervals.</figcaption>
+  </figure>
+  <p class="finding">Adults aged 18–29 reported the highest share, <strong>17.8%</strong> (95% CI 15.9–19.8), and the share fell steadily after age 60 to <strong>4.2%</strong> among adults 80 and older.</p>
+</article>
+
+<!-- 05 Dental -->
+<article class="report" id="dental">
+  <div class="top"><h2>Preventive dental visits in Texas children</h2><span class="tag warm">Data brief</span></div>
+  <p>A two-page data brief comparing preventive dental visits for children aged 1–5 and 12–17 locally, statewide and nationally, framed against Healthy People 2030 objective OH-01.</p>
+  <dl class="meta">
+    <dt>Data</dt><dd>Cook Children's Community Health Needs Assessment 2021 (eight North Texas counties); National Survey of Children's Health 2021</dd>
+    <dt>Tools</dt><dd>Excel charts, data brief layout</dd>
+    <dt>Role</dt><dd>Sole author</dd>
+  </dl>
+  <p class="contrib"><b>My contribution:</b> pulled comparable estimates from two public sources, calculated the age gaps, built the charts and wrote the brief.</p>
+  <figure>
+    <div class="chart" id="c-dental"></div>
+    <figcaption>Gap in preventive dental visits, ages 12–17 minus ages 1–5, percentage points, 2021.</figcaption>
+  </figure>
+  <p class="finding">Younger children lagged in every region, and the gap was widest in the Cook Children's service area at <strong>23</strong> points, which points to local barriers to early dental care.</p>
+</article>
+
+<!-- 06 YRBS -->
+<article class="report" id="yrbs">
+  <div class="top"><h2>Teen vaping and persistent sadness, 2019–2021</h2><span class="tag warm">Trend analysis</span></div>
+  <p>Using weighted national estimates, I tracked daily e-cigarette use and persistent sadness or hopelessness among U.S. high school students, then compared subgroups by sex, grade and race/ethnicity.</p>
+  <dl class="meta">
+    <dt>Data</dt><dd>Youth Risk Behavior Survey, 2019 and 2021, grades 9–12</dd>
+    <dt>Methods</dt><dd>Weighted prevalence with 95% CIs, comparison across years and subgroups, ecological cross-comparison</dd>
+    <dt>Role</dt><dd>Sole author</dd>
+  </dl>
+  <p class="contrib"><b>My contribution:</b> compared CDC's published weighted estimates across years and subgroups and wrote the report. No microdata analysis.</p>
+  <figure>
+    <div class="chart" id="c-yrbs"></div>
+    <figcaption>Prevalence among U.S. high school students, 2019 vs. 2021.</figcaption>
+  </figure>
+  <p class="finding">Daily vaping fell from <strong>7.2%</strong> to <strong>5.0%</strong> while persistent sadness rose from <strong>36.7%</strong> to <strong>42.3%</strong>, reaching <strong>56.6%</strong> among female students in 2021.</p>
+</article>
+
+<section class="code" id="code" aria-labelledby="cd">
+  <div class="cw-head">
+    <div class="label">Code samples</div>
+    <h2 id="cd">SAS from my coursework</h2>
+    <p>Short excerpts from programs I wrote, with file paths shortened. Full programs, logs and output for every project are available on request.</p>
+  </div>
+  <figure class="snip">
+    <figcaption><b>Linking three NHANES survey cycles</b> · Oral health exam and demographic files, merged by respondent ID</figcaption>
+<pre><code>/* 2009-2010 cycle: import transport files, keep needed variables, merge */
+libname bios xport "OHXDEN_F.XPT";
+proc copy in=bios out=work; select OHXDEN_F; run;
+libname bios xport "DEMO_F.XPT";
+proc copy in=bios out=work; select DEMO_F; run;
+
+data den_f;     set work.OHXDEN_F; keep SEQN OHXDECAY; run;
+data subdemo_f; set work.DEMO_F;   keep SEQN RIDAGEYR RIDRETH1 INDHHIN2; run;
+
+data final_f;
+  merge subdemo_f den_f;
+  by SEQN;
+run;
+/* repeated for the 2013-2014 and 2017-2018 cycles */</code></pre>
+  </figure>
+  <figure class="snip">
+    <figcaption><b>Cleaning and recoding before analysis</b> · NHANES diet and cholesterol project</figcaption>
+<pre><code>data proj.sample_summary;
+  set proj.cholesterol2;
+  /* exclude records missing any demographic covariate */
+  if cmiss(of ridageyr riagendr ridreth1) then delete;
+
+  length gender $6 race_group $15;
+  if riagendr = 1 then gender = "Male";
+  else if riagendr = 2 then gender = "Female";
+
+  if ridreth1 in (1, 2) then race_group = "Hispanic";
+  else if ridreth1 = 3 then race_group = "White";
+  else if ridreth1 = 4 then race_group = "Black";
+  else race_group = "Other";
+run;
+
+proc glm data=proj.cholesterol_3cat;
+  class chol_3cat;
+  model dr1tcarb = chol_3cat;
+  means chol_3cat / tukey;
+run;</code></pre>
+  </figure>
+  <figure class="snip">
+    <figcaption><b>Recoding and reshaping with arrays</b> · Data management final exam</figcaption>
+<pre><code>/* a code of 5 means missing in Q1-Q5 */
+data survey2c;
+  set survey1;
+  array questions Q1-Q5;
+  do i = 1 to dim(questions);
+    if questions[i] = 5 then questions[i] = .;
+  end;
+  drop i;
+run;
+
+/* wide to long: one record per ID per year */
+data long1;
+  set survey1;
+  array score_array(5) Q1-Q5;
+  do YEAR = 1 to 5;
+    SCORE = score_array(YEAR);
+    output;
+  end;
+  drop Q1-Q5;
+run;</code></pre>
+  </figure>
+</section>
+
+<section class="coursework" aria-labelledby="cw">
+  <div class="cw-head">
+    <div class="label">Coursework</div>
+    <h2 id="cw">Every biostatistics and epidemiology assignment</h2>
+    <p>Each course below lists what I was asked to do, the methods I used and what I found. SAS code, logs and output exist for every analytic assignment.</p>
+  </div>
+
+  <article class="course" id="bios1">
+    <header class="c-top">
+      <div><span class="label">BIOS 5300 · Fall 2023</span><h3>Biostatistics I and SAS programming</h3></div>
+      <span class="tag">SAS</span>
+    </header>
+    <p>Statistical theory from Rosner's <i>Fundamentals of Biostatistics</i> alongside SAS programming from Cody's <i>Learning SAS by Example</i>, with a SAS program, log and output submitted for each chapter.</p>
+    <div class="tblwrap"><table class="mini">
+      <thead><tr><th>Assignment</th><th>Methods</th><th>What I did</th></tr></thead>
+      <tbody>
+        <tr><td>Rosner ch. 3–5</td><td>Descriptive statistics, probability, binomial, Poisson and normal distributions</td><td>Hand-worked problem sets on summary measures, conditional probability, PMFs and CDFs</td></tr>
+        <tr><td>Rosner ch. 6–7</td><td>Estimation, confidence intervals, one-sample hypothesis tests</td><td>Point and interval estimates, test statistics and p-values</td></tr>
+        <tr><td>Rosner ch. 12 (two parts)</td><td>One-way ANOVA and multiple comparisons</td><td>Multi-group comparisons of means with post-hoc testing</td></tr>
+        <tr><td>Cody ch. 3–4</td><td>Reading raw data, permanent libraries</td><td>Read column and list input, created derived variables, labels and DATE9. formats, and stored permanent datasets</td></tr>
+        <tr><td>Cody ch. 6</td><td>Import and export</td><td>Wrote CSV output with ODS, imported CSV and XLS files with PROC IMPORT</td></tr>
+        <tr><td>Cody ch. 7–8</td><td>Conditional logic</td><td>Weighted course grades, cholesterol groups, and age-specific pulse and blood pressure cut-offs with nested DO blocks</td></tr>
+        <tr><td>Cody ch. 9</td><td>SAS dates</td><td>Age at visit with YRDIF, dates with two-digit years kept within 1910–2006</td></tr>
+        <tr><td>Cody ch. 10</td><td>Subsetting and combining</td><td>WHERE vs. subsetting IF on a blood-count dataset</td></tr>
+        <tr><td>Cody ch. 12</td><td>Character functions</td><td>Storage lengths, CATS/CATX vs. concatenation, SUBSTR, cleaning mixed-unit weight strings</td></tr>
+        <tr><td>Competency 1</td><td>Import, cleaning, descriptives</td><td>Imported an employee dataset from Excel and CSV, converted salary text to numbers with COMPRESS and INPUT, and summarized it</td></tr>
+        <tr><td>Competency 2</td><td>Two-sample t-test</td><td>Compared bone-density change in 47 breastfeeding and 22 non-breastfeeding women, with histograms, Satterthwaite vs. conservative degrees of freedom, and implications for trial design and policy</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="course" id="bios2">
+    <header class="c-top">
+      <div><span class="label">BIOS 5310 · Spring 2024</span><h3>Intermediate Biostatistics</h3></div>
+      <span class="tag">SAS</span>
+    </header>
+    <p>Regression, ANOVA and categorical analysis from Daniel and Cross, <i>Biostatistics: A Foundation for Analysis in the Health Sciences</i>.</p>
+    <div class="tblwrap"><table class="mini">
+      <thead><tr><th>Assignment</th><th>Methods</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Week 4</td><td>Multiple linear regression</td><td>Designed a regional obesity model with SES, food environment, physical activity, healthcare access and education as predictors</td></tr>
+        <tr><td>Week 5</td><td>Multiple correlation</td><td>Pearson correlation matrix and multiple R for a three-variable dataset (n = 15), with a significance test</td></tr>
+        <tr><td>Week 8</td><td>Chi-square tests of independence</td><td>Wheelchair use and falls (n = 233): χ² = 0.078, 1 df, calculated by hand and in SAS; no association</td></tr>
+        <tr><td>Week 10</td><td>Experimental designs</td><td>Worked examples of completely randomized, randomized complete block and factorial designs, each analyzed with ANOVA</td></tr>
+        <tr><td>Week 11</td><td>One-way ANOVA with Tukey HSD</td><td>Leukocyte counts across healthy and four cancer groups: F = 7.04, p &lt; 0.0001; healthy group differed from groups B, C and D at α = 0.01</td></tr>
+        <tr><td>Final exam</td><td>Model building for multiple regression</td><td>Predicted height in 665 students from parents' heights, sex, BMI, waist-to-hip ratio, residency and major; compared forward, backward and stepwise selection; checked VIF, residuals, normality and Durbin-Watson (1.976)</td></tr>
+        <tr><td>Research proposal</td><td>Multi-cycle NHANES data linkage</td><td>Dental caries trends 2009–2018: merged oral health exam and demographic files across three cycles in SAS</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="course" id="ada">
+    <header class="c-top">
+      <div><span class="label">EPID 5314 · Spring 2025</span><h3>Applied Data Analysis in Epidemiology</h3></div>
+      <span class="tag">SAS</span>
+    </header>
+    <p>The full manuscript workflow on real survey data, from raw file to Table 1, Table 2 and an adjusted model, then interaction analysis.</p>
+    <div class="tblwrap"><table class="mini">
+      <thead><tr><th>Assignment</th><th>Methods</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Week 1</td><td>Import and exploration</td><td>Documented SAS program importing a case-control dataset, with metadata review and descriptive statistics</td></tr>
+        <tr><td>Data preparation</td><td>Cleaning</td><td>HINTS survey data: found and resolved duplicate respondent IDs, converted character age to numeric, built a codebook</td></tr>
+        <tr><td>Missing data</td><td>Missingness assessment</td><td>Described missing smoking status and defended complete-case vs. missing-category handling</td></tr>
+        <tr><td>Table 1</td><td>Descriptive table</td><td>Awareness of e-cigarettes by smoking status, with age, gender, race/ethnicity, education, income, health status and region</td></tr>
+        <tr><td>Table 2</td><td>Chi-square and t-tests</td><td>Never (n = 2,052) vs. current/former smokers (n = 1,525); gender χ² = 49.94 and race/ethnicity χ² = 53.68, both p &lt; 0.0001</td></tr>
+        <tr><td>Table 3</td><td>Logistic regression, variable selection</td><td>Dallas officer-involved shootings: backward and forward selection agreed on weapon type, time of day and number of officers on scene</td></tr>
+        <tr><td>Interactions</td><td>Stratified ORs, additive interaction</td><td>Alcohol and esophageal cancer: crude OR 6.81; stratum-specific ORs varied by age group; observed joint excess risk 0.497 vs. 0.157 expected under additivity</td></tr>
+        <tr><td>Final project</td><td>Full analysis</td><td>NHANES diet and cholesterol study, featured above</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="course" id="epi1">
+    <header class="c-top">
+      <div><span class="label">EPID 5300 · Fall 2023</span><h3>Principles of Epidemiology</h3></div>
+      <span class="tag warm">Methods</span>
+    </header>
+    <p>Weekly problem sets based on Gordis <i>Epidemiology</i>, plus a group community health profile.</p>
+    <div class="tblwrap"><table class="mini">
+      <thead><tr><th>Problem set</th><th>Topic</th><th>What I did</th></tr></thead>
+      <tbody>
+        <tr><td>Weeks 1–2</td><td>Foundations, natural history</td><td>Historical contributions such as John Snow's cholera work; sources of variability in survival measured from diagnosis</td></tr>
+        <tr><td>Weeks 4–5</td><td>Descriptive and cohort designs</td><td>Case studies vs. case series; preliminary cohort work for the Epiville "Susser Syndrome" outbreak simulation</td></tr>
+        <tr><td>Week 6</td><td>Choosing a design</td><td>Proposed and defended a design for indoor air pollution and cognitive decline in older adults</td></tr>
+        <tr><td>Week 9</td><td>Random error</td><td>p-values, confidence intervals, type I and II errors</td></tr>
+        <tr><td>Weeks 10–11</td><td>Bias and confounding</td><td>Direction of bias from differential misclassification; criteria for a confounder</td></tr>
+        <tr><td>Week 13</td><td>Causal inference</td><td>Applied causal guidelines to three hypothetical studies</td></tr>
+        <tr><td>Week 14</td><td>Screening</td><td>Breast exam screening in 2,500 cases and 5,000 controls: sensitivity 72%, specificity 84%</td></tr>
+        <tr><td>Group project</td><td>Community profile</td><td>Pleasant Grove (population 87,767): demographic, education, income and housing profile with community recommendations</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="course" id="epi2">
+    <header class="c-top">
+      <div><span class="label">EPID 5310 · Spring 2024</span><h3>Intermediate Epidemiologic Methods</h3></div>
+      <span class="tag warm">Methods</span>
+    </header>
+    <p>Nine calculation labs on bias, confounding and study design, and a published-article critique.</p>
+    <div class="tblwrap"><table class="mini">
+      <thead><tr><th>Lab</th><th>Topic</th><th>What I calculated</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Measures of frequency</td><td>Probability, odds, risk and rate</td></tr>
+        <tr><td>2</td><td>Causation</td><td>Multicausal models, applied to tuberculosis</td></tr>
+        <tr><td>3</td><td>Selection bias</td><td>Case-control study of multiple sclerosis (400 cases, 400 controls): OR and 95% CI under equal and unequal response</td></tr>
+        <tr><td>4</td><td>Measurement error</td><td>RR and 95% CI with and without non-differential and differential misclassification</td></tr>
+        <tr><td>5</td><td>Confounding</td><td>Crude vs. stratum-specific RRs for treatment and lung cancer, Mantel-Haenszel adjustment</td></tr>
+        <tr><td>6</td><td>Effect modification</td><td>Tamoxifen trial: RR and RD, additive vs. multiplicative interaction</td></tr>
+        <tr><td>7</td><td>Directed acyclic graphs</td><td>Chains, forks and colliders: when adjustment opens or blocks a path</td></tr>
+        <tr><td>8</td><td>Cohort and case-control design</td><td>Design choices for rare exposures and outcomes</td></tr>
+        <tr><td>9</td><td>Power and sample size</td><td>Sample size for a depression intervention across Cohen's d values at α = 0.05, power 0.80</td></tr>
+        <tr><td>Critique</td><td>Article appraisal</td><td>Nitecki et al., <i>Am J Epidemiol</i> 2023: BMI and recurrent low back pain in over 600,000 young adults; hypotheses, design, bias and confounding</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="course" id="epi3">
+    <header class="c-top">
+      <div><span class="label">Spring and Fall 2024</span><h3>Infectious disease, chronic disease and surveillance epidemiology</h3></div>
+      <span class="tag warm">Field methods</span>
+    </header>
+    <div class="tblwrap"><table class="mini">
+      <thead><tr><th>Course</th><th>Assignment</th><th>What I did</th></tr></thead>
+      <tbody>
+        <tr><td>Infectious disease</td><td>Foodborne outbreak report</td><td>Festival dinner outbreak: case definition, food-specific attack rates and RRs, epidemic curve; 26 cases, median incubation 12 hours, <i>C. perfringens</i> traced to mashed potatoes and gravy</td></tr>
+        <tr><td>Infectious disease</td><td>Hospital outbreak report</td><td>11 cases of multidrug-resistant <i>A. baumannii</i>: case-control study linked infection to pulsatile lavage (OR 36, p &lt; 0.001), confirmed with environmental sampling and molecular typing</td></tr>
+        <tr><td>Infectious disease</td><td>Group presentation</td><td>Vaccine-preventable diseases, with varicella materials</td></tr>
+        <tr><td>Chronic disease</td><td>Research proposal</td><td>Longitudinal study of temporomandibular joint ankylosis in ankylosing spondylitis: aims, background, research strategy, communication plan and final presentation</td></tr>
+        <tr><td>Surveillance</td><td>System analysis</td><td>Evaluated CDC's National HIV Behavioral Surveillance among transgender women on data collection principles and quality</td></tr>
+        <tr><td>Surveillance</td><td>Policy recommendations</td><td>Case for adding post-COVID conditions to a county respiratory surveillance system</td></tr>
+        <tr><td>Surveillance</td><td>Excel and Tableau</td><td>STI data pipeline and dashboards, featured above</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+</section>
+
+<section class="more" aria-labelledby="more">
+  <h2 id="more">Also in the MPH</h2>
+  <ul>
+    <li><b>Survey instrument design and pilot test</b><span>Built and piloted (n = 19) a questionnaire on periodontal disease among people with mental health conditions, then revised it for clarity, sensitive items and response options.</span></li>
+    <li><b>Surveillance system evaluation</b><span>Recommendations on adding post-COVID conditions to a county respiratory surveillance system, covering purpose, data sources and planning steps.</span></li>
+    <li><b>Climate and health policy</b><span>Term project and recorded presentation on heat protection policy in Texas.</span></li>
+  </ul>
+</section>
+
+<footer>Project figures come from my MPH coursework at UNT Health Science Center (2023–2025). The STI project uses a training dataset for a fictional county.</footer>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('copyBtn');
+  btn.addEventListener('click',function(){
+    var t=document.getElementById('email').textContent;
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy'},1600)};
+    var fallback=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected';};
+    try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+  });
+
+  var NS='http://www.w3.org/2000/svg';
+  function el(tag,attrs,text){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;return e}
+  function svg(w,h){return el('svg',{viewBox:'0 0 '+w+' '+h,role:'img'})}
+  var C={accent:'var(--accent)',warm:'var(--warm)',rule:'var(--rule)'};
+
+  // 01 line chart
+  (function(){
+    var d=[[2012,493.4],[2013,484.1],[2014,463.8],[2015,500.2]];
+    var W=560,H=230,L=56,R=32,T=24,B=36,min=440,max=520;
+    var s=svg(W,H);s.setAttribute('aria-label','Chlamydia incidence per 100,000: 2012 493.4, 2013 484.1, 2014 463.8, 2015 500.2');
+    var x=function(i){return L+i*(W-L-R)/(d.length-1)},y=function(v){return T+(max-v)/(max-min)*(H-T-B)};
+    [440,460,480,500,520].forEach(function(v){s.appendChild(el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),class:'grid'}));s.appendChild(el('text',{x:L-8,y:y(v)+4,'text-anchor':'end'},v))});
+    var area='M'+x(0)+','+y(min);d.forEach(function(p,i){area+=' L'+x(i)+','+y(p[1])});area+=' L'+x(d.length-1)+','+y(min)+' Z';
+    s.appendChild(el('path',{d:area,fill:C.accent,'fill-opacity':'.1'}));
+    var line='';d.forEach(function(p,i){line+=(i?' L':'M')+x(i)+','+y(p[1])});
+    s.appendChild(el('path',{d:line,fill:'none',stroke:C.accent,'stroke-width':2.5}));
+    d.forEach(function(p,i){
+      var last=i===d.length-1;
+      s.appendChild(el('circle',{cx:x(i),cy:y(p[1]),r:last?5.5:4,fill:last?C.accent:'var(--sheet)',stroke:C.accent,'stroke-width':2}));
+      s.appendChild(el('text',{x:x(i),y:y(p[1])-11,'text-anchor':'middle',class:'val'},p[1].toFixed(1)));
+      s.appendChild(el('text',{x:x(i),y:H-12,'text-anchor':'middle'},p[0]));
+    });
+    document.getElementById('c-sti').appendChild(s);
+  })();
+
+  // horizontal bar helper
+  function hbars(id,data,opt){
+    var W=opt.W||560,rowH=opt.rowH||34,T=8,L=opt.L||120,R=56,H=T+data.length*rowH+ (opt.axis?26:6);
+    var s=svg(W,H);s.setAttribute('aria-label',opt.label);
+    var x=function(v){return L+(v-opt.min)/(opt.max-opt.min)*(W-L-R)};
+    if(opt.ticks)opt.ticks.forEach(function(t){s.appendChild(el('line',{x1:x(t),x2:x(t),y1:T,y2:T+data.length*rowH,class:'grid'}));s.appendChild(el('text',{x:x(t),y:T+data.length*rowH+18,'text-anchor':'middle'},t))});
+    data.forEach(function(r,i){
+      var cy=T+i*rowH+rowH/2;
+      s.appendChild(el('text',{x:L-10,y:cy+4,'text-anchor':'end'},r[0]));
+      if(r.length>3){ // CI whisker + dot
+        s.appendChild(el('line',{x1:x(r[2]),x2:x(r[3]),y1:cy,y2:cy,stroke:opt.color,'stroke-width':2,'stroke-opacity':.45}));
+        [r[2],r[3]].forEach(function(v){s.appendChild(el('line',{x1:x(v),x2:x(v),y1:cy-5,y2:cy+5,stroke:opt.color,'stroke-width':1.5,'stroke-opacity':.6}))});
+        s.appendChild(el('circle',{cx:x(r[1]),cy:cy,r:5,fill:opt.color}));
+        s.appendChild(el('text',{x:x(r[3])+8,y:cy+4,class:'val'},r[1].toFixed(1)+'%'));
+      }else{
+        var hi=opt.highlight===i;
+        s.appendChild(el('rect',{x:x(opt.min),y:cy-rowH*0.32,width:x(r[1])-x(opt.min),height:rowH*0.64,rx:2,fill:opt.color,'fill-opacity':hi?1:.55}));
+        s.appendChild(el('text',{x:x(r[1])+8,y:cy+4,class:'val'},(opt.fmt||String)(r[1])));
+      }
+    });
+    document.getElementById(id).appendChild(s);
+  }
+
+
+  // race lines
+  (function(){
+    var yrs=[2012,2013,2014,2015];
+    var ser=[['Black',[1678.4,1582.5,1321.6,1365.7],C.accent],['Hispanic',[462.4,416.0,361.3,370.2],C.warm],['White',[229.5,233.5,203.7,214.5],'var(--muted)']];
+    var W=380,H=240,L=46,R=78,T=16,B=30,max=1800;
+    var s=svg(W,H);s.setAttribute('aria-label','Chlamydia rate per 100,000 by race: Black 1678 to 1366, Hispanic 462 to 370, White 230 to 215, 2012 to 2015');
+    var x=function(i){return L+i*(W-L-R)/3},y=function(v){return T+(max-v)/max*(H-T-B)};
+    [0,600,1200,1800].forEach(function(v){s.appendChild(el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),class:'grid'}));s.appendChild(el('text',{x:L-8,y:y(v)+4,'text-anchor':'end'},v))});
+    yrs.forEach(function(yv,i){s.appendChild(el('text',{x:x(i),y:H-10,'text-anchor':'middle'},yv))});
+    ser.forEach(function(sr){
+      var d='';sr[1].forEach(function(v,i){d+=(i?' L':'M')+x(i)+','+y(v)});
+      s.appendChild(el('path',{d:d,fill:'none',stroke:sr[2],'stroke-width':2.2}));
+      sr[1].forEach(function(v,i){s.appendChild(el('circle',{cx:x(i),cy:y(v),r:3,fill:sr[2]}))});
+    });
+    var ly=[y(1365.7),y(370.2)-6,y(214.5)+10];
+    ser.forEach(function(sr,i){s.appendChild(el('text',{x:W-R+8,y:ly[i]+4,class:'val'},sr[0]))});
+    document.getElementById('c-race').appendChild(s);
+  })();
+  hbars('c-city',[['Gains',731.8],['Alvert',641.2],['Prairie',501.9],['Pointer',454.2],['Fortsville',335.8]],{min:0,max:800,color:C.accent,L:78,W:380,rowH:38,highlight:0,fmt:function(v){return v.toFixed(1)},label:'2015 chlamydia rate per 100,000: Gains 731.8, Alvert 641.2, Prairie 501.9, Pointer 454.2, Fortsville 335.8'});
+  hbars('c-chol',[['Normal',263.0],['Borderline',258.7],['High',236.6]],{min:0,max:300,color:C.accent,L:84,W:340,rowH:40,highlight:2,fmt:function(v){return v.toFixed(1)+' g'},label:'Mean carbohydrate intake: normal 263.0 g, borderline 258.7 g, high 236.6 g'});
+
+  hbars('c-covid',[['18–29',17.8,15.9,19.8],['30–39',15.2,14.1,16.2],['40–49',16.9,15.7,18.3],['50–59',15.3,14.1,16.7],['60–69',10.9,9.8,12.0],['70–79',7.1,5.9,8.5],['80+',4.2,3.4,5.3]],{min:0,max:25,ticks:[0,5,10,15,20,25],axis:true,color:C.warm,L:60,rowH:30,label:'Ever experienced long COVID by age, percent of all adults'});
+
+  hbars('c-dental',[["Cook Children's area",23.0],['Texas',16.3],['United States',15.3]],{min:0,max:25,color:C.warm,L:150,rowH:40,highlight:0,fmt:function(v){return v.toFixed(1)+' pp'},label:"Preventive dental visit gap: Cook Children's area 23 points, Texas 16.3, United States 15.3"});
+
+  // dumbbell
+  (function(){
+    var d=[['Daily vaping',7.2,5.0],['Persistent sadness',36.7,42.3]];
+    var W=560,L=140,R=40,T=30,rowH=46,H=T+d.length*rowH+26,max=50;
+    var s=svg(W,H);s.setAttribute('aria-label','Daily vaping 7.2% in 2019 to 5.0% in 2021; persistent sadness 36.7% to 42.3%');
+    var x=function(v){return L+v/max*(W-L-R)};
+    [0,10,20,30,40,50].forEach(function(t){s.appendChild(el('line',{x1:x(t),x2:x(t),y1:T-6,y2:T+d.length*rowH-6,class:'grid'}));s.appendChild(el('text',{x:x(t),y:H-8,'text-anchor':'middle'},t+'%'))});
+    s.appendChild(el('circle',{cx:L,cy:10,r:4.5,fill:'var(--sheet)',stroke:C.warm,'stroke-width':2}));s.appendChild(el('text',{x:L+10,y:14},'2019'));
+    s.appendChild(el('circle',{cx:L+70,cy:10,r:4.5,fill:C.warm}));s.appendChild(el('text',{x:L+80,y:14},'2021'));
+    d.forEach(function(r,i){
+      var cy=T+i*rowH+rowH/2-6;
+      s.appendChild(el('text',{x:L-12,y:cy+4,'text-anchor':'end'},r[0]));
+      s.appendChild(el('line',{x1:x(r[1]),x2:x(r[2]),y1:cy,y2:cy,stroke:C.warm,'stroke-width':3,'stroke-opacity':.4}));
+      s.appendChild(el('circle',{cx:x(r[1]),cy:cy,r:5.5,fill:'var(--sheet)',stroke:C.warm,'stroke-width':2}));
+      s.appendChild(el('circle',{cx:x(r[2]),cy:cy,r:5.5,fill:C.warm}));
+      var up=r[2]>r[1];
+      s.appendChild(el('text',{x:x(r[2])+(up?10:-10),y:cy+4,'text-anchor':up?'start':'end',class:'val'},r[2].toFixed(1)+'%'));
+      s.appendChild(el('text',{x:x(r[1])+(up?-10:10),y:cy+4,'text-anchor':up?'end':'start'},r[1].toFixed(1)+'%'));
+    });
+    document.getElementById('c-yrbs').appendChild(s);
+  })();
+})();
+</script>
+
+</body>
+</html>
